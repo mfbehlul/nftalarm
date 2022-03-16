@@ -15,7 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from setAlarm.views import set_alarm_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('set-alarm/',set_alarm_view,name="setAlarm"),
 ]

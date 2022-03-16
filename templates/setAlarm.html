@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>NFTAlarm</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/3.1.0/css/adminlte.min.css">
+    <!-- Google Font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+  </head>
+  <body class="hold-transition skin-blue layout-top-nav">
+    <div class="wrapper">
+      <header class="main-header"></header>
+      <div class="content-wrapper">
+        <div class="container">
+         <!-- <section class="content">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="box box-info">
+                  <div class="box-header with-border"></div>
+                  <div class="box-body">
+                    <div class="form-group">
+                      <label>Attribute List</label>
+                      <select name="select_prefecture" id="select_prefecture" class="form-control">
+                        
+                        <option value="" data-pref-id="01">Istanbul</option>
+                        <option value="" data-pref-id="02">Ankara</option>
+                        <option value="" data-pref-id="03">Izmir</option>
+                        <option value="" data-pref-id="04">Canakkale</option>
+                        <option value="" data-pref-id="05">Bursa</option>
+                        
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label>Second List</label>
+                      <select name="select_city" id="select_city" class="form-control">
+                        <option value="">Deneme</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>-->
+        <!-- Page Heading -->
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+  <h1 class="h3 mb-0 text-gray-800">NFTalarm</h1>
+</div>
+
+<!-- Content Row -->
+<div class="row">
+
+  <div id="search-container" class="container">
+    
+
+
+     
+
+
+
+
+        <h5 class="mt-2">Collection Name:</h5>
+        <div class="form-group">
+          <select name="limit" id="limit" class="form-control">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="5" selected>5</option>
+            <option value="10">10</option>
+            <option value="15">15</option>
+          </select>
+        </div>
+
+
+        <h5 class="mt-2">Attribute 1 :</h5>
+        <div class="form-group">
+          <select name="limit" id="limit" class="form-control">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="5" selected>5</option>
+            <option value="10">10</option>
+            <option value="15">15</option>
+          </select>
+        </div>
+
+        <h5 class="mt-2">Attribute 2:</h5>
+        <div class="form-group">
+          <select name="limit" id="limit" class="form-control">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="5" selected>5</option>
+            <option value="10">10</option>
+            <option value="15">15</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block mt-4">
+          Search
+        </button>
+      </form>
+    </div>
+  </div>
+  {% if isSearch == "True" %}
+  <h5 class="h3 mb-0 text-green-800"><br>Your query is completed. You can check your analysis from Analysis part of the sidebar.</h5>
+  {%endif%}
+</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
