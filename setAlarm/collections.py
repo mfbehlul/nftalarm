@@ -1,11 +1,9 @@
-from operator import ge
-from matplotlib.pyplot import get
 import requests
 import pandas as pd
 from typing import Dict, List
 import os
 from pathlib import Path
-
+import ast
 currentdir = os.path.dirname(os.path.abspath(__file__))
 parentdir = os.path.dirname(currentdir)
 
@@ -53,7 +51,7 @@ def get_collections_attributes(collection_name: str) -> Dict:
     data = pd.read_csv(Path(parentdir) / "data/collections_and_attributes.csv")
     for i, row in data.iterrows():
         if row["collection_name"] == collection_name:
-            return row["attributes"]
+            return ast.literal_eval(row["attributes"])
 
 
 def get_matchec_nfts_with_selected_choices(collection_name: str, attributes: Dict):
