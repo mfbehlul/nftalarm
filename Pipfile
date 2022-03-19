@@ -6,6 +6,10 @@ name = "pypi"
 [packages]
 django = "==4.0.3"
 gunicorn = "*"
+django-extensions = "*"
+black = "*"
+requests = "*"
+pandas = "*"
 
 [dev-packages]
 

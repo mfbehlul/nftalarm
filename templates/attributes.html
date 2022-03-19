@@ -1,0 +1,10 @@
+{% for key, values in data.items %}
+<h5 class="mt-2">{{key}}</h5>
+<div class="form-group">
+  <select name="attribute" id="attribute" class="form-control">
+    {% for v in values%}
+    <option value= "{{v}}" >{{v}}</option>
+    {%endfor%}
+  </select>
+</div>
+{%endfor%}
