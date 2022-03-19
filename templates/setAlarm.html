@@ -61,17 +61,17 @@
 
 
 
-
+        
         <h5 class="mt-2">Collection Name:</h5>
         <div class="form-group">
           <select name="limit" id="limit" class="form-control">
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="5" selected>5</option>
-            <option value="10">10</option>
-            <option value="15">15</option>
+            {% for collection in data %}
+            <option value= {{collection}}>{{collection}}</option>
+            {%endfor%}
           </select>
         </div>
+
+        
 
 
         <h5 class="mt-2">Attribute 1 :</h5>
