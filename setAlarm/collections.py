@@ -54,7 +54,7 @@ def get_collections_attributes(collection_name: str) -> Dict:
             return ast.literal_eval(row["attributes"])
 
 
-def get_matchec_nfts_with_selected_choices(collection_name: str, attributes: Dict):
+def get_matched_nfts_with_selected_choices(collection_name: str, attributes: Dict):
     """
     This fucntion has been created to find nfts whose attributes match with the given attributes for the given collection.
 
@@ -65,7 +65,9 @@ def get_matchec_nfts_with_selected_choices(collection_name: str, attributes: Dic
     """
     data = pd.read_csv(Path(parentdir) / f"data/{collection_name}.csv")
     for key, value in attributes.items():
-        data = data[data[key] == value]
+        if value == "":
+            continue
+        data = data[data[key].astype(str) == value]
     return data
 
 
