@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 from pathlib import Path
 import os
+from configparser import ConfigParser
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -78,10 +79,19 @@ WSGI_APPLICATION = 'nftalarmcom.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
+#Read config.ini file
+config_object = ConfigParser()
+config_object.read('/Users/fatih/Dev/nft-alarm/config.ini')
+serverinfo = config_object['SERVERCONFIG']
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': serverinfo["NAME"],
+        'USER':serverinfo["USER"],
+        'PASSWORD':serverinfo["PASSWORD"],
+        'HOST':serverinfo["HOST"],
+        'PORT':serverinfo["PORT"]
     }
 }
 
