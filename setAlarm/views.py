@@ -14,14 +14,15 @@ def set_alarm_view(request):
     if global_flag:
         collection_name = str(text.get("collection", ""))
         attribute_dict=get_collections_attributes(collection_name)
-        for key,value in attribute_dict.items():
-            attribute_dict[key]=str(text.get(key, ""))
+        if attribute_dict:
+            for key,value in attribute_dict.items():
+                attribute_dict[key]=str(text.get(key, ""))
 
-        print("name",collection_name)
-        print("new attribute dict:",attribute_dict)
+            print("name",collection_name)
+            print("new attribute dict:",attribute_dict)
 
-        matched_nft=get_matched_nfts_with_selected_choices(collection_name=collection_name,attributes=attribute_dict)
-        print(matched_nft)
+            matched_nft=get_matched_nfts_with_selected_choices(collection_name=collection_name,attributes=attribute_dict)
+            print(matched_nft)
         
     return render(request, "setAlarm.html", context)
 
