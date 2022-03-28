@@ -13,10 +13,13 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 from pathlib import Path
 import os
 from configparser import ConfigParser
+#Get current directory
+currentdir = os.path.dirname(os.path.abspath(__file__))
+parentdir = os.path.dirname(currentdir)
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
@@ -81,7 +84,7 @@ WSGI_APPLICATION = 'nftalarmcom.wsgi.application'
 
 #Read config.ini file
 config_object = ConfigParser()
-config_object.read('/Users/fatih/Dev/nft-alarm/config.ini')
+config_object.read(Path(parentdir)/'config.ini')
 serverinfo = config_object['SERVERCONFIG']
 
 DATABASES = {
