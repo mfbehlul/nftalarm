@@ -35,47 +35,12 @@
         <!-- Page Heading -->
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
   <h1 class="h3 mb-0 text-gray-800">NFTalarm</h1>
-</div>
-
-<!-- Content Row -->
-<div class="row">
-
-  <div id="search-container" class="container">
-    <form id="search-form">
-        <h5 class="mt-2">Collection Name:</h5>
-        <div class="form-group">
-          <select name="collection" hx-get= "{% url 'loadAttributes' %}" hx-trigger="change" hx-target="#attributes" class="form-control">
-            <option value="" selected disabled hidden>Choose here</option>
-            {% for collection in data %}
-            <option value= "{{collection}}">{{collection}}</option>
-            {%endfor%}
-          </select>
-        </div>
-
   
-        <div id="attributes">
-          {% include 'attributes.html' %}
         </div>
-      </div>
-      
-      <button type="submit" class="btn btn-primary btn-block mt-4">
-        Search
-      </button>
-  
-  {% if isCompleted == "True" %}
-  <a href="{% url 'results' %}">
-    <input type="button" value="Track" class="btn btn-primary btn-block mt-4" />
- </a>
-  
-  {%endif%}
-
-      </form>
-    </div>
-  </div>
-
-</div>
-        </div>
+        <p>Your active alarms:</p>
       </div>
     </div>
+</div>
+
   </body>
 </html>
