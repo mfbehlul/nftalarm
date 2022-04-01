@@ -15,11 +15,16 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from setAlarm.views import set_alarm_view, load_attributes
+from setAlarm.views import set_alarm_view, load_attributes,show_results
+from accounts.views import login_view,register_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('set-alarm/',set_alarm_view,name="setAlarm"),
     path('attributes/',load_attributes,name="loadAttributes"),
+    path('login/', login_view, name="login"),
+    path('logout/', login_view, name="logout"),
+    path('register/', register_view, name="register"),
+    path('results/',show_results,name="results"),
 
 ]

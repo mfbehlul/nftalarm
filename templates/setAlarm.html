@@ -52,22 +52,28 @@
           </select>
         </div>
 
-        
+  
         <div id="attributes">
           {% include 'attributes.html' %}
         </div>
-
       </div>
 
       <button type="submit" class="btn btn-primary btn-block mt-4">
         Search
       </button>
+      <a href="{% url 'results' %}">
+        <input type="button" value="Track" class="btn btn-primary btn-block mt-4" />
+     </a>
+
+
+  {% if isCompleted == "True" %}
+  
+  {%endif%}
+
       </form>
     </div>
   </div>
-  {% if isSearch == "True" %}
-  <h5 class="h3 mb-0 text-green-800"><br>Your query is completed. You can check your analysis from Analysis part of the sidebar.</h5>
-  {%endif%}
+
 </div>
         </div>
       </div>

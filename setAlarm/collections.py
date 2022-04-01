@@ -68,7 +68,8 @@ def get_matched_nfts_with_selected_choices(collection_name: str, attributes: Dic
         if value == "":
             continue
         data = data[data[key].astype(str) == value]
-    return data
 
+    return data.to_dict(orient='records')
+    #return data
 
 
